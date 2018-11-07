@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -48,6 +49,7 @@ public class SavingBooksManager extends Application {
         
         primaryStage.setTitle("Saving Books Login");
         primaryStage.setScene(scene);
+        primaryStage.getIcons().add(new Image("/Image/icon.png"));
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();
        }

@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -40,9 +42,9 @@ public class LoginController implements Initializable {
     @FXML
     private Button btnLogin;
     @FXML
-    private TextField userName;
+    private JFXTextField userName;
     @FXML
-    private PasswordField password;
+    private JFXPasswordField password;
     @FXML
     private AnchorPane pane;
     @FXML
@@ -82,7 +84,9 @@ public class LoginController implements Initializable {
             }
             else{
                 lbResult.setText("Invalid UserName Or Password!");
-                lbResult.setStyle("-fx-background-color: #212121; -fx-text-fill: white");
+                lbResult.setStyle("-fx-background-color: #212121; "
+                        + "-fx-text-fill: white;" 
+                        +"-fx-alignment: center;"); 
             }
         }
     }
@@ -96,7 +100,7 @@ public class LoginController implements Initializable {
         Stage home = new Stage(StageStyle.DECORATED);
         Parent root = FXMLLoader.load(getClass().getResource("/View/home.fxml"));
         home.setTitle("Saving Books Manager");
-        home.getIcons().add(new Image("/Image/main.jpg"));
+        home.getIcons().add(new Image("/Image/icon.png"));
         home.setScene(new Scene(root, 800, 600));
         home.show();
         }

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddWithdrawController">
+   <children>
+      <VBox prefHeight="350.0" prefWidth="580.0">
+         <children>
+            <HBox prefHeight="73.0" prefWidth="580.0">
+               <children>
+                  <JFXTextField labelFloat="true" prefHeight="41.0" prefWidth="171.0" promptText="Mã phiếu rút tiền" stylesheets="@../Style/style.css">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="20.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+                  <JFXTextField labelFloat="true" prefHeight="38.0" prefWidth="352.0" promptText="Tên người rút" stylesheets="@../Style/style.css">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="20.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="54.0" prefWidth="580.0">
+               <children>
+                  <JFXTextField labelFloat="true" prefHeight="37.0" prefWidth="171.0" promptText="Số CMND" stylesheets="@../Style/style.css">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+                  <JFXTextField labelFloat="true" prefHeight="37.0" prefWidth="265.0" promptText="Số tiền rút" stylesheets="@../Style/style.css">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+                  <Label prefHeight="37.0" prefWidth="41.0" text="VNĐ">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <JFXTextField labelFloat="true" prefHeight="37.0" prefWidth="562.0" promptText="Địa chỉ">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <JFXDatePicker prefHeight="40.0" prefWidth="294.0" promptText="Ngày rút">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </JFXDatePicker>
+                  <JFXComboBox labelFloat="true" prefHeight="40.0" prefWidth="245.0" promptText="Mã sổ tiết kiệm">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </JFXComboBox>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="68.0" prefWidth="580.0">
+               <children>
+                  <JFXButton alignment="BOTTOM_CENTER" buttonType="RAISED" prefWidth="295.0" ripplerFill="#2e12dd00" stylesheets="@../Style/button.css" text="Lưu" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" buttonType="RAISED" prefWidth="285.0" ripplerFill="#341bd700" stylesheets="@../Style/button.css" text="Hủy" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,11 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
-    
-</AnchorPane>
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="700.0">
+         <right>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton buttonType="RAISED" contentDisplay="TOP" prefHeight="200.0" prefWidth="127.0" stylesheets="@../Style/style.css" text="Thêm Nhân Viên">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="USERS" size="25" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="127.0" stylesheets="@../Style/style.css" text="Mở Sổ Tiết Kiệm">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="USER_PLUS" size="25" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="10.0" layoutY="82.0" prefHeight="200.0" prefWidth="127.0" stylesheets="@../Style/style.css" text="Lập Phiếu Gửi Tiền">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="MONEY" size="25" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="10.0" layoutY="226.0" prefHeight="200.0" prefWidth="127.0" stylesheets="@../Style/style.css" text="Lập Phiếu Rút Tiền">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="MONEY" size="25" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TOP" prefHeight="200.0" prefWidth="127.0" stylesheets="@../Style/style.css" text="Lập Báo Cáo">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="TH" layoutX="10.0" layoutY="300.0" size="25" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TOP" prefHeight="200.0" prefWidth="127.0" stylesheets="@../Style/style.css" text="Cài Đặt">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="HIDE" layoutX="10.0" layoutY="326.0" size="25" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </right>
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <JFXTabPane BorderPane.alignment="CENTER">
+               <tabs>
+                  <Tab text="Tra Cứu Thông Tin">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="1000.0" prefWidth="1300.0" AnchorPane.bottomAnchor="-462.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-727.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="700.0" stylesheets="@../Style/style.css" text="Tra Cứu Nhân Viên" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="23.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="230.0" prefWidth="1300.0">
+                                       <children>
+                                          <JFXTextField alignment="CENTER" labelFloat="true" promptText="Mã nhân viên" stylesheets="@../Style/style.css">
+                                             <HBox.margin>
+                                                <Insets top="30.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                          <VBox alignment="CENTER" prefHeight="223.0" prefWidth="515.0" stylesheets="@../Style/style.css">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tên nhân viên" />
+                                                <Text layoutX="142.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số điện thoại" textAlignment="CENTER" />
+                                                <Text layoutX="142.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Địa chỉ" textAlignment="CENTER" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Label alignment="CENTER" prefWidth="700.0" stylesheets="@../Style/style.css" text="Tra Cứu Sổ Tiết Kiệm" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="23.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="250.0" prefWidth="700.0">
+                                       <children>
+                                          <JFXTextField alignment="CENTER" labelFloat="true" promptText="Mã sổ tiết kiệm" stylesheets="@../Style/style.css">
+                                             <HBox.margin>
+                                                <Insets top="30.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                          <VBox alignment="CENTER" prefHeight="250.0" prefWidth="537.0" stylesheets="@../Style/style.css">
+                                             <children>
+                                                <Text layoutX="142.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên khách hàng" textAlignment="CENTER" />
+                                                <Text layoutX="142.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Địa chỉ" />
+                                                <Text layoutX="142.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số CMND" />
+                                                <Text layoutX="142.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Loại tiết kiệm" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Số tiền gửi" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày mở sổ" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

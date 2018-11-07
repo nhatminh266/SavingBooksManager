@@ -4,12 +4,12 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : Oct 23, 2018, 10:49:31 PM
+    Created on : Nov 5, 2018, 8:10:54 PM
     Author     : nhatminh266
 */
 .root {
     -fx-background-color: #DDDDDD;
-    
+       
 }
 .cardPane {
     -fx-background-color: white;
@@ -18,4 +18,3 @@ and open the template in the editor.
 .topPane {
     -fx-background-color: #3196DE;
 }
-

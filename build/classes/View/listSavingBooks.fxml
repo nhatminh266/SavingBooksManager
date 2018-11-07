@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1012.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView prefHeight="400.0" prefWidth="810.0">
+         <columns>
+            <TableColumn prefWidth="58.0" text="Mã Sổ" />
+            <TableColumn minWidth="15.0" prefWidth="92.0" text="Loại Sổ" />
+            <TableColumn minWidth="15.0" prefWidth="75.0" text="Ngày Mở" />
+            <TableColumn prefWidth="97.0" text="Ngày Đáo Hạn" />
+            <TableColumn prefWidth="137.0" text="Khách Hàng" />
+            <TableColumn prefWidth="110.0" text="Số ĐT" />
+            <TableColumn minWidth="0.0" prefWidth="98.0" text="Số CMND" />
+            <TableColumn minWidth="9.0" prefWidth="83.0" text="Địa Chỉ" />
+            <TableColumn minWidth="8.0" prefWidth="103.0" text="Số Tiền Gốc" />
+            <TableColumn minWidth="3.0" prefWidth="62.0" text="Lãi suất" />
+            <TableColumn prefWidth="96.0" text="Số Dư" />
+         </columns>
+      </TableView>
+   </children>
+</StackPane>

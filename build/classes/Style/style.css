@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 23, 2018, 10:49:31 PM
+    Author     : nhatminh266
+*/
+.root {
+    -fx-background-color: #DDDDDD;
+    
+    
+}
+.cardPane {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+}
+.topPane {
+    -fx-background-color: #3196DE;
+}
+VBox {
+    -fx-spacing: 5;
+    -fx-padding: 10px 10px 0px 10px;
+    
+}
+.jfx-button{
+    -fx-background-color: #E0E0E0;
+}
+
+.jfx-button:hover{
+    -fx-background-color: #424242;
+    -fx-text-fill: white;
+
+}
+.jfx-button:hover .glyph-icon{
+    -fx-fill: white;
+}
+Label {
+    -fx-background-color: #424242;
+     -fx-text-fill: white;
+    
+}
+JFXTextField {
+    -fx-font-size: 16;
+}
+Text {
+    -fx-font-size: 14;
+}
+
+
