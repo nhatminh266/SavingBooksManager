@@ -824,7 +824,6 @@ public class CreateWithdrawController implements Initializable {
         File reportFile = new File("src/report/reportWithdraw.jasper");
         java.util.Map hash = new HashMap();
         hash.put("pMonth", month);
-        //hash.put("Deposit Date", "12");
         Connection conn = null;
         JasperPrint jp = null;
         try {

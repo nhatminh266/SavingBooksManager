@@ -13,6 +13,11 @@ import app.hibernate.model.WindowController;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import static java.time.temporal.ChronoUnit.DAYS;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -38,6 +43,7 @@ import javafx.stage.StageStyle;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 /**
@@ -77,7 +83,8 @@ public class MainController implements Initializable {
     private Text txtInterest;
     @FXML
     private GridPane gridPane;
-    
+    private String id = null;
+    private final String NOT_TERM = "ST00";
    
     
 
@@ -92,7 +99,8 @@ public class MainController implements Initializable {
         });
         
         keySearch.textProperty().addListener(e -> {
-            String id = keySearch.getText();
+            id = keySearch.getText();
+            updateInterestToNow();
             List<SavingsBook> list = this.getSavingsBook(id);
             List<InterestDetail> listDetail = this.getInterestDetail(id);
             //Session session = HibernateUtil.getSession();
@@ -145,6 +153,49 @@ public class MainController implements Initializable {
             
         
     }  
+    private void updateInterestToNow() {
+        try{
+        List<InterestDetail> list = this.getInterestDetail(id);
+        Session session = HibernateUtil.getSession();
+        Transaction trans = session.beginTransaction();
+        SavingsBook savingsBook = (SavingsBook) session.get(SavingsBook.class, id);
+        int term = savingsBook.getSavingsType().getTerm();
+        String savingsTypeID = savingsBook.getSavingsType().getId();
+        double interestRate = savingsBook.getSavingsType().getInterestRate();
+        Date open = savingsBook.getOpenDate();
+        LocalDate openDay = Instant
+               .ofEpochMilli(open.getTime()) // get the millis value to build the Instant
+               .atZone(ZoneId.systemDefault()) // convert to JVM default timezone
+               .toLocalDate();  // convert to LocalDate
+        LocalDate toDay = LocalDate.now();
+        int numDays = (int) DAYS.between(openDay, toDay);
+        if(numDays == 0)
+            numDays = 1;
+        
+        if(!list.isEmpty()) {
+            for(InterestDetail in : list) {
+                double balance = in.getBalance();
+                double interest = in.getInterest();
+                double sumBalance = in.getSumBalance();
+                if(savingsTypeID.equals(NOT_TERM)) {
+                //Tiền lãi không kỳ hạn = (Số dư * Lãi suất) / 365 * Số ngày
+                    interest = balance * interestRate / 365 * numDays;
+                    in.setBalance(balance);
+                    in.setInterest(Math.round(interest));
+                    in.setSumBalance(Math.round(balance + interest));
+                    session.update(in);
+                }
+            }
+            trans.commit();
+            
+        }
+        }catch(NullPointerException e) {
+           
+        }
+        finally {
+            HibernateUtil.closeSession();
+        }
+    }
 
     private ObservableList<SavingsBook> getSavingsBook(String id) {
         Session session = HibernateUtil.getSession();
