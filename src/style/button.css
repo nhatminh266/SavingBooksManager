@@ -1,0 +1,16 @@
+.yes-button {
+    
+    -fx-text-fill: white;
+    -fx-background-color: #04B4AE;
+    -fx-border-color: #04B4AE;
+    -fx-font-size: 10pt;
+}
+.no-button {
+    -fx-text-fill: white;
+    -fx-background-color: #585858;
+    -fx-border-color: #585858;
+    -fx-font-size: 10pt;
+}
+.glyph-icon {
+    -fx-fill: white;
+}

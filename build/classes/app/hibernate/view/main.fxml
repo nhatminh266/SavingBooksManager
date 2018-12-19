@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1000.0" stylesheets="@../../../style/main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.hibernate.controller.MainController">
+   <children>
+      <JFXDrawer defaultDrawerSize="150.0" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane layoutX="7.0" styleClass="pane-content" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="30.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <JFXButton contentDisplay="TOP" mnemonicParsing="false" prefHeight="62.0" prefWidth="153.0" styleClass="toolbar-button" text="Home" textAlignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="HOME" size="25" textAlignment="CENTER" wrappingWidth="23.214284896850586" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton contentDisplay="TOP" mnemonicParsing="false" onAction="#loadAddSavingsBook" prefHeight="30.0" prefWidth="160.0" styleClass="toolbar-button" text="Create Savings Book" textAlignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="PLUS" size="25" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton contentDisplay="TOP" mnemonicParsing="false" onAction="#loadDeposit" prefHeight="30.0" prefWidth="160.0" styleClass="toolbar-button" text="Deposit" textAlignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="MONEY" size="25" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton contentDisplay="TOP" mnemonicParsing="false" onAction="#loadWithdraw" prefHeight="30.0" prefWidth="160.0" styleClass="toolbar-button" text="Withdraws" textAlignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="MONEY" size="25" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                          
+                        </JFXButton>
+                        <JFXButton contentDisplay="TOP" mnemonicParsing="false" onAction="#loadAddSavingsType" prefHeight="30.0" prefWidth="160.0" styleClass="toolbar-button" text="Add Savings Type" textAlignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="PLUS" size="25" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton contentDisplay="TOP" mnemonicParsing="false" onAction="#loadView" prefHeight="62.0" prefWidth="206.0" styleClass="toolbar-button" text="View Report" textAlignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="TABLE" size="25" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children></HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane layoutY="92.0" minHeight="0.0" minWidth="0.0" prefHeight="531.0" prefWidth="996.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="92.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <JFXTextField fx:id="keySearch" alignment="CENTER" labelFloat="true" prefHeight="30.0" prefWidth="100.0" promptText="SavingsBook ID">
+                           <VBox.margin>
+                              <Insets bottom="30.0" left="30.0" right="750.0" top="30.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <GridPane fx:id="gridPane" styleClass="main-text" VBox.vgrow="ALWAYS">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Text fx:id="txtSavingsBookId" strokeType="OUTSIDE" strokeWidth="0.0" />
+                              <Text fx:id="txtSavingsType" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="1" />
+                              <Text fx:id="txtCustomer" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" />
+                              <Text fx:id="txtBalance" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Text fx:id="txtOpenDate" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Text fx:id="txtDueDate" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Text fx:id="txtCloseDate" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Text fx:id="txtStatus" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Text fx:id="txtSum" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <Text fx:id="txtAmount" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Text fx:id="txtInterest" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                        </GridPane>
+                        <HBox alignment="CENTER" prefHeight="37.0" prefWidth="996.0" spacing="10.0" styleClass="root">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-footer" text="Developed by Nhat Minh Hoang - Hiep Hoang Ha" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-header" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-header" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="419.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icon-title2.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-header" text="     Savings Book Management" textAlignment="CENTER" wrappingWidth="847.1757659912109">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin></Text>
+                  <Label alignment="CENTER" prefHeight="23.0" prefWidth="40.0" styleClass="icon-maximize" textAlignment="CENTER">
+                     <graphic>
+                        <MaterialDesignIconView blendMode="ADD" glyphName="WINDOW_MINIMIZE" onMouseClicked="#minimize" size="17" styleClass="icon-maximize" textAlignment="CENTER" wrappingWidth="30.0" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets bottom="4.0" right="1.0" top="1.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="23.0" prefWidth="40.0" styleClass="icon-maximize" textAlignment="CENTER">
+                     <graphic>
+                        <MaterialDesignIconView blendMode="ADD" glyphName="WINDOW_MAXIMIZE" size="17" styleClass="icon-maximize" textAlignment="CENTER" wrappingWidth="30.0" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets bottom="4.0" right="1.0" top="1.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="23.0" prefWidth="51.0" styleClass="icon-close" textAlignment="CENTER">
+                     <graphic>
+                        <MaterialDesignIconView blendMode="ADD" glyphName="CLOSE" onMouseClicked="#exitPlatform" size="17" styleClass="icon-close" textAlignment="CENTER" wrappingWidth="48.0" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="3.0" top="1.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

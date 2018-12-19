@@ -1,0 +1,306 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+* {
+
+    -fx-primary : #2E2E2E; /*background*/
+    -fx-secondary : #F7F8E0; /*content*/
+    -fx-primarytext : #B2B2B2; /*gray-white*/
+    -fx-secondarytext: #2E2E2E; /*black-text*/
+    -fx-toolbar: #CEF6F5;
+    -fx-blue: #1976D2;
+    -fx-red: #FF0000;
+    -fx-color-1:#1976D2;
+}
+.root{
+    -fx-background-color: -fx-primary;
+    
+}
+.pane-content {
+    -fx-background-color: -fx-secondary;
+}
+.glyph-icon
+{
+    -fx-fill: -fx-primarytext;
+}
+
+.icon-close {
+    -fx-background-color: transparent;
+}
+.icon-close:hover {
+    -fx-fill: white;
+    -fx-background-color: #B40404;
+}
+.icon-maximize {
+    -fx-background-color: transparent;
+}
+
+
+.icon-maximize:hover {
+    -fx-fill: white;
+    -fx-background-color: #013ADF;
+}
+
+.text-field
+{
+    -fx-text-fill: -fx-secondarytext;
+    -fx-font-size : 10pt;
+    -jfx-focus-color: blue;
+    /*-fx-text-fill: derive(-fx-secondarytext, 20%);*/
+    -fx-prompt-text-fill: black; 
+}
+.text-field:disabled {
+   -fx-background-color: -fx-secondary;
+   -fx-text-fill: -fx-secondarytext;
+   -fx-opacity: 1.0;
+}
+.date-picker:disabled {
+     -fx-opacity: 1.0;
+     -fx-text-fill: -fx-secondarytext;
+}
+
+/*Text styling*/
+.main-text
+{
+    -fx-fill: -fx-secondarytext;
+    -fx-font-size: 12pt;
+    -fx-text-alignment: center;
+}
+/*Toolbar buttons*/
+.toolbar-button
+{
+    -fx-border-color: transparent;
+    -fx-background-color: derive(-fx-primary, 30%);
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+    -fx-text-fill: -fx-secondary;
+    -fx-font-size: 10pt;
+}
+.toolbar-button:hover
+{
+    -fx-background-color: -fx-secondarytext;
+    -fx-text-fill: -fx-primary;
+}
+
+.toolbar-button:hover .glyph-icon
+{
+    -fx-fill: -fx-primary;
+}
+.task-button {
+    -fx-spacing: 20px;
+    -fx-padding: 40px 20px 20px 20px;
+}
+/**/
+/*Menu bar Styling*/
+.menu-bar{
+    -fx-base : -fx-primary;
+    -fx-background-color: -fx-primary;
+    -fx-font-size: 10pt;
+}
+
+.context-menu {
+    -fx-background-color: derive(-fx-primary, 20%);
+}
+
+/*TablPane styling*/
+.tab{
+    -fx-background-color: derive(-fx-primary, 30%);
+}
+
+.tab-header-background{
+    -fx-background-color: derive(-fx-primary, 30%);
+}
+
+.tab-label{
+    -fx-text-fill: -fx-secondary;
+    -fx-font-size: 10pt; 
+}
+
+
+.tab-main{
+    -fx-pref-height : 60;
+    -fx-max-height : 60;
+    -fx-pref-width: 200;
+}
+
+/*Login Screen Specific*/
+
+/*
+.wrong-credentials
+{
+    -jfx-unfocus-color: -fx-red;
+    -jfx-focus-color: -fx-red;
+}
+*/
+.login-button{
+    -fx-text-fill: white;
+    -fx-background-color: #01A9DB;
+    -fx-border-color: #01A9DB;
+    -fx-font-size: 11pt;
+}
+.text-header {
+    -fx-fill: -fx-secondary;
+    -fx-background-color: transparent;
+    -fx-font-size: 12pt;
+    -fx-font-weight: bolder;
+    -fx-alignment: center;
+}
+.text-footer {
+    -fx-fill: -fx-primarytext;
+    -fx-background-color: transparent;
+    -fx-font-size: 12pt;
+    -fx-font-weight: bolder;
+    -fx-alignment: center;
+}
+.text-footer:hover {
+    -fx-fill: -fx-secondary;
+    -fx-background-color: transparent;
+    -fx-font-size: 12pt;
+    -fx-font-weight: bolder;
+    -fx-alignment: center;
+}
+.button:hover, .button:focused{
+    -fx-border-color: blue;
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: -fx-primary;
+    -fx-fill: -fx-primarytext;
+}
+/*Screen Task*/
+.combo-box {
+    -fx-prompt-text-fill: black;
+    -jfx-focus-color: blue;
+    -fx-font-size: 10pt;
+}
+.combo-box .list-cell {
+    -fx-background-color: derive(-fx-secondary, 10%);
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-secondarytext;
+}
+.combo-box-popup .list-view {
+    -fx-background-color: -fx-secondary;
+    -fx-background-color: derive(-fx-secondary, 10%);
+}
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover 
+{
+    -fx-background: -fx-secondary;
+    -fx-background-color: #81DAF5;
+    -fx-text-fill: -fx-primarytext;
+}
+.combo-box-popup .list-view .list-cell:filled:hover 
+{
+    -fx-background-color: #81BEF7;
+    -fx-text-fill: -fx-secondarytext;
+}
+.label{
+    -fx-text-fill: -fx-secondarytext;
+    -fx-font-size: 10pt;
+}
+/*
+.tree-table-view .column-header,
+.tree-table-view .column-header .filler,
+.tree-table-view .column-header-background .filler {
+    -fx-table-cell-border-color: -fx-primary;
+    -fx-border-width: 0.1px;
+    -fx-background-color: #ffffff,  derive(-fx-primary, 50%); /*#ffffff*/  
+/*}
+.tree-table-view .table-cell{
+    -fx-text-fill: black;
+}
+.tree-table-view .label{
+    -fx-text-fill: white;
+    -fx-font-size: 10pt;
+}*/
+
+.table-view{
+   -fx-background-color: transparent;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+}
+
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */  
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background, 
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+
+
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button, 
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+}
+
+.save-button{
+    -fx-text-fill: white;
+    -fx-background-color: #74DF00;
+    -fx-border-color: #74DF00;
+    -fx-font-size: 10pt;
+}
+.update-button{
+    -fx-text-fill: white;
+    -fx-background-color: #01A9DB;
+    -fx-border-color: #01A9DB;
+    -fx-font-size: 10pt;
+}
+.cancel-button{
+    -fx-text-fill: white;
+    -fx-background-color: #585858;
+    -fx-border-color: #585858;
+    -fx-font-size: 10pt;
+}
+.delete-button {
+    -fx-text-fill: white;
+    -fx-background-color: #B40404;
+    -fx-border-color: #B40404;
+    -fx-font-size: 10pt;
+}
+.report-button {
+    -fx-text-fill: white;
+    -fx-background-color: derive(blue, 40%);
+    -fx-border-color: derive(blue, 40%);
+    -fx-font-size: 10pt;
+}
+
+

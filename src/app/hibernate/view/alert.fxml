@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="200.0" prefWidth="450.0" styleClass="root" stylesheets="@../../../style/main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.hibernate.controller.AlertController">
+   <children>
+      <HBox alignment="TOP_RIGHT" prefHeight="30.0" prefWidth="450.0"> 
+      <Label alignment="CENTER" prefHeight="23.0" prefWidth="51.0" styleClass="icon-close">
+         <graphic>
+            <MaterialDesignIconView blendMode="ADD" glyphName="CLOSE" onMouseClicked="#closeStage" size="17" styleClass="icon-close" textAlignment="CENTER" wrappingWidth="48.0" />
+         </graphic>
+         <HBox.margin>
+            <Insets bottom="4.0" left="4.0" right="3.0" top="1.0" />
+         </HBox.margin>
+      </Label>
+      </HBox>
+      <AnchorPane styleClass="pane-content" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" focusTraversable="true" prefHeight="113.0" prefWidth="446.0">
+               <children>
+                  <ImageView fx:id="imgAlert" fitHeight="75.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/question.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="lbContent" prefHeight="20.0" prefWidth="372.0" text="Do you want to exit?">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="446.0" spacing="15.0" styleClass="confirm-button" stylesheets="@../../../style/button.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="113.0">
+               <children>
+                  <JFXButton onAction="#btnYes" prefHeight="32.0" prefWidth="77.0" styleClass="yes-button" text="Yes">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="CHECK" size="18" textAlignment="CENTER" wrappingWidth="32.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="noButton" onAction="#btnNo" prefHeight="32.0" prefWidth="127.0" styleClass="no-button" text="No, Thanks">
+                     <graphic>
+                        <MaterialDesignIconView glyphName="CLOSE" size="18" textAlignment="CENTER" wrappingWidth="33.0" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

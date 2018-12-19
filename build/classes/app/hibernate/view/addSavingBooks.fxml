@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="650.0" prefWidth="900.0" styleClass="root" stylesheets="@../../../style/main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.hibernate.controller.AddSavingBooksController">
+   <children>
+      <HBox layoutX="20.0" layoutY="20.0" prefHeight="30.0" prefWidth="419.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/icon-title2.png" />
+               </image>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-header" text="                  Create Savings Book Account" textAlignment="CENTER" wrappingWidth="743.7968444824219">
+               <HBox.margin>
+                  <Insets top="3.0" />
+               </HBox.margin></Text>
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="40.0" styleClass="icon-maximize" textAlignment="CENTER">
+               <graphic>
+                  <MaterialDesignIconView blendMode="ADD" glyphName="WINDOW_MINIMIZE" onMouseClicked="#minimize" size="17" styleClass="icon-maximize" textAlignment="CENTER" wrappingWidth="30.0" />
+               </graphic>
+               <HBox.margin>
+                  <Insets bottom="4.0" right="1.0" top="1.0" />
+               </HBox.margin>
+            </Label>
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="40.0" styleClass="icon-maximize" textAlignment="CENTER">
+               <graphic>
+                  <MaterialDesignIconView blendMode="ADD" glyphName="WINDOW_MAXIMIZE" size="17" styleClass="icon-maximize" textAlignment="CENTER" wrappingWidth="30.0" />
+               </graphic>
+               <HBox.margin>
+                  <Insets bottom="4.0" right="1.0" top="1.0" />
+               </HBox.margin>
+            </Label>
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="51.0" styleClass="icon-close" textAlignment="CENTER">
+               <graphic>
+                  <MaterialDesignIconView blendMode="ADD" glyphName="CLOSE" onMouseClicked="#closeStage" size="17" styleClass="icon-close" textAlignment="CENTER" wrappingWidth="48.0" />
+               </graphic>
+               <HBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="3.0" top="1.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <JFXTabPane AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="30.0">
+         <tabs>
+            <Tab onSelectionChanged="#refeshSavingsBook" text="Add Savings Book">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane-content">
+                     <children>
+                        <HBox prefHeight="346.0" prefWidth="900.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox prefHeight="318.0" prefWidth="806.0">
+                                 <children>
+                                    <HBox prefHeight="40.0" prefWidth="580.0">
+                                       <children>
+                                          <JFXTextField fx:id="txtSavingsBookID" labelFloat="true" prefWidth="185.0" promptText="Savings Book ID">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </JFXTextField>
+                                       </children>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="45.0" prefWidth="400.0">
+                                       <children>
+                                          <JFXComboBox fx:id="cbSavingsType" labelFloat="true" prefHeight="37.0" prefWidth="526.0" promptText="Saving Types">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                          <JFXComboBox fx:id="cbEmployee" labelFloat="true" prefHeight="37.0" prefWidth="209.0" promptText="Employee Name">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="44.0" prefWidth="757.0">
+                                       <children>
+                                          <JFXComboBox fx:id="cbCustomer" labelFloat="true" prefHeight="30.0" prefWidth="273.0" promptText="Customer Name">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                          <JFXTextField fx:id="txtAmount" labelFloat="true" prefHeight="31.0" prefWidth="221.0" promptText="Amount" stylesheets="@../../../style/main.css">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                          <Label fx:id="lbAmount" alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="122.0">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label prefHeight="31.0" prefWidth="89.0" text="VND">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="45.0" prefWidth="200.0">
+                                       <children>
+                                          <Label alignment="BOTTOM_LEFT" prefHeight="36.0" prefWidth="112.0" text="Open Date:">
+                                             <HBox.margin>
+                                                <Insets left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXDatePicker fx:id="openDate" prefHeight="37.0" prefWidth="172.0">
+                                             <HBox.margin>
+                                                <Insets left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXDatePicker>
+                                          <Label alignment="BOTTOM_LEFT" prefHeight="36.0" prefWidth="112.0" text="Due Date:">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <JFXDatePicker fx:id="dueDate" prefHeight="37.0" prefWidth="194.0">
+                                             <HBox.margin>
+                                                <Insets left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXDatePicker>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="45.0" prefWidth="757.0">
+                                       <children>
+                                          <JFXTextField fx:id="keyWordSavingBook" alignment="CENTER" labelFloat="true" prefHeight="30.0" prefWidth="281.0" promptText="Enter any key words to search!">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="384.0" prefWidth="188.0" styleClass="task-button">
+                                 <children>
+                                    <JFXButton fx:id="btnSaveCustomer" alignment="CENTER" buttonType="RAISED" onAction="#saveSavingsBook" prefHeight="31.0" prefWidth="83.0" styleClass="save-button" text="Save">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    
+                                    <JFXButton fx:id="btnDeleteSavingsBook" alignment="CENTER" buttonType="RAISED" onAction="#deleteSavingsBook" prefHeight="31.0" prefWidth="83.0" styleClass="delete-button" text="Delete">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton alignment="CENTER" buttonType="RAISED" onAction="#resetSavingsBook" prefHeight="31.0" prefWidth="83.0" styleClass="cancel-button" text="Reset">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tbSavingsBook" prefHeight="291.0" prefWidth="896.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <columns>
+                              <TableColumn fx:id="colSavingsBookID" prefWidth="59.0" text="ID" />
+                              <TableColumn fx:id="colSavingsBookCustomer" minWidth="0.0" prefWidth="126.0" text="Customer Name" />
+                              <TableColumn fx:id="colEmployee" minWidth="0.0" prefWidth="129.0" text="Employee Name" />
+                              <TableColumn fx:id="colOpenDate" prefWidth="105.0" text="Open Date" />
+                              <TableColumn fx:id="colDueDate" prefWidth="95.0" text="Due Date" />
+                              <TableColumn fx:id="colSavingsType" minWidth="0.0" prefWidth="223.0" text="Saving Types" />
+                              <TableColumn fx:id="colAmount" minWidth="0.0" prefWidth="109.0" text="Amount" />
+                              <TableColumn fx:id="colStatus" prefWidth="49.0" text="Status" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Add Customer">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane-content">
+                     <children>
+                        <HBox prefHeight="346.0" prefWidth="900.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox prefHeight="318.0" prefWidth="806.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="70.0" prefWidth="756.0">
+                                       <children>
+                                          <JFXTextField fx:id="txtCustomerID" labelFloat="true" prefWidth="185.0" promptText="Customer ID">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </JFXTextField>
+                                          <JFXTextField fx:id="txtCustomerName" labelFloat="true" prefWidth="351.0" promptText="Full Name">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="45.0" prefWidth="400.0">
+                                       <children>
+                                          <JFXTextField fx:id="txtIdCard" labelFloat="true" prefWidth="185.0" promptText="ID/ Passport No." stylesheets="@../../../style/main.css">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                          <Label alignment="BOTTOM_LEFT" prefHeight="26.0" prefWidth="114.0" text="Issued Date: ">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXDatePicker fx:id="issueDate" prefWidth="200.0">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXDatePicker>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="44.0" prefWidth="757.0">
+                                       <children>
+                                          <JFXTextField fx:id="txtIssueBy" labelFloat="true" prefHeight="30.0" prefWidth="352.0" promptText="Issued By:" stylesheets="@../../../style/main.css">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                          <JFXTextField fx:id="txtMobile" labelFloat="true" prefWidth="185.0" promptText="Mobile" stylesheets="@../../../style/main.css">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXTextField fx:id="txtAddress" labelFloat="true" prefHeight="30.0" prefWidth="568.0" promptText="Address" stylesheets="@../../../style/main.css">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="45.0" prefWidth="757.0">
+                                       <children>
+                                          <JFXTextField fx:id="keyWordCustomer" alignment="CENTER" labelFloat="true" prefHeight="30.0" prefWidth="281.0" promptText="Enter any key words to search!">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="384.0" prefWidth="188.0" styleClass="task-button">
+                                 <children>
+                                    <JFXButton alignment="CENTER" buttonType="RAISED" onAction="#saveCustomer" prefHeight="31.0" prefWidth="83.0" styleClass="save-button" text="Save">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    
+                                    <JFXButton fx:id="btnDeleteCustomer" alignment="CENTER" buttonType="RAISED" onAction="#deleteCustomer" prefHeight="31.0" prefWidth="83.0" styleClass="delete-button" text="Delete">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btnResetCustomer" alignment="CENTER" buttonType="RAISED" onAction="#resetCustomer" prefHeight="31.0" prefWidth="83.0" styleClass="cancel-button" text="Reset">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tbCustomer" prefHeight="267.0" prefWidth="896.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="colCustomerID" prefWidth="59.0" text="ID" />
+                              <TableColumn fx:id="colCustomerName" minWidth="0.0" prefWidth="168.0" text="Customer Name" />
+                            <TableColumn fx:id="colCardID" prefWidth="114.0" text="ID/ Passport No." />
+                              <TableColumn fx:id="colIssueDate" prefWidth="105.0" text="Issued Date" />
+                              <TableColumn fx:id="colIssueBy" minWidth="7.0" prefWidth="135.0" text="Issued By" />
+                              <TableColumn fx:id="colMobile" minWidth="0.0" prefWidth="128.0" text="Mobile" />
+                              <TableColumn fx:id="colAddress" prefWidth="186.0" text="Address" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Add Employee">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane-content">
+                     <children>
+                        <HBox prefHeight="346.0" prefWidth="900.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox prefHeight="318.0" prefWidth="806.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="70.0" prefWidth="756.0">
+                                       <children>
+                                          <JFXTextField fx:id="txtEmployeeID" labelFloat="true" prefWidth="185.0" promptText="Employee ID">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </JFXTextField>
+                                          <JFXTextField fx:id="txtEmployeeName" labelFloat="true" prefWidth="351.0" promptText="Full Name">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="45.0" prefWidth="400.0">
+                                       <children>
+                                          <JFXTextField fx:id="txtCardID" labelFloat="true" prefHeight="30.0" prefWidth="185.0" promptText="ID/ Passport No." stylesheets="@../../../style/main.css">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                          <JFXComboBox fx:id="cbPosition" labelFloat="true" prefHeight="30.0" prefWidth="351.0" promptText="Position">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="44.0" prefWidth="757.0">
+                                       <children>
+                                          <JFXTextField fx:id="txtEmployeeAddress" labelFloat="true" prefHeight="30.0" prefWidth="352.0" promptText="Address" stylesheets="@../../../style/main.css">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                          <JFXTextField fx:id="txtEmployeeMobile" labelFloat="true" prefWidth="185.0" promptText="Mobile" stylesheets="@../../../style/main.css">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXComboBox fx:id="cbBranch" labelFloat="true" prefHeight="30.0" prefWidth="572.0" promptText="Branch Name" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="45.0" prefWidth="757.0">
+                                       <children>
+                                          <JFXTextField fx:id="keyWordEmployee" alignment="CENTER" labelFloat="true" prefHeight="30.0" prefWidth="281.0" promptText="Enter any key words to search!">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                             </HBox.margin>
+                                          </JFXTextField>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="384.0" prefWidth="188.0" styleClass="task-button">
+                                 <children>
+                                    <JFXButton alignment="CENTER" buttonType="RAISED" onAction="#saveEmployee" prefHeight="31.0" prefWidth="83.0" styleClass="save-button" text="Save">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    
+                                    <JFXButton fx:id="btnDeleteEmployee" alignment="CENTER" buttonType="RAISED" onAction="#deleteEmployee" prefHeight="31.0" prefWidth="83.0" styleClass="delete-button" text="Delete">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton alignment="CENTER" buttonType="RAISED" onAction="#resetEmployee" prefHeight="31.0" prefWidth="83.0" styleClass="cancel-button" text="Reset">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tbEmployee" prefHeight="267.0" prefWidth="896.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <columns>
+                              <TableColumn fx:id="colEmployeeID" prefWidth="59.0" text="ID" />
+                              <TableColumn fx:id="colEmployeeName" minWidth="0.0" prefWidth="168.0" text="Employee Name" />
+                              <TableColumn fx:id="colCardIDEmployee" prefWidth="114.0" text="ID/ Passport No." />
+                              <TableColumn fx:id="colEmployeeMobile" prefWidth="105.0" text="Mobile" />
+                              <TableColumn fx:id="colPosition" minWidth="7.0" prefWidth="135.0" text="Position" />
+                              <TableColumn fx:id="colBranch" minWidth="0.0" prefWidth="128.0" text="Branch ID" />
+                              <TableColumn fx:id="colEmployeeAddress" prefWidth="186.0" text="Address" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>
